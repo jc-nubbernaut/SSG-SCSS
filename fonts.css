@@ -1,0 +1,66 @@
+/* --------------------------------------------------------- */
+/* FONTS */
+@font-face {
+  font-family: "Graphik-Light";
+  src: url("https://s3.amazonaws.com/files.collageplatform.com.prod/application/5c7ee9d8a5aa2c0e498b4567/Graphik-Light.otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik-Regular";
+  src: url("https://s3.amazonaws.com/files.collageplatform.com.prod/application/5c7ee9d8a5aa2c0e498b4567/Graphik-Regular.otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik-RegularItalic";
+  src: url("https://s3.amazonaws.com/files.collageplatform.com.prod/application/5c7ee9d8a5aa2c0e498b4567/Graphik-RegularItalic.otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik-Medium";
+  src: url("https://s3.amazonaws.com/files.collageplatform.com.prod/application/5c7ee9d8a5aa2c0e498b4567/Graphik-Medium.otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik-Bold";
+  src: url("https://s3.amazonaws.com/files.collageplatform.com.prod/application/5c7ee9d8a5aa2c0e498b4567/Graphik-Bold.otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik-BoldItalic";
+  src: url("https://s3.amazonaws.com/files.collageplatform.com.prod/application/5c7ee9d8a5aa2c0e498b4567/Graphik-BoldItalic.otf");
+  font-display: swap;
+}
+/* italic */
+i, em {
+  font-family: "Graphik-RegularItalic";
+  font-style: normal;
+}
+
+/* bold */
+b, strong {
+  font-family: "Graphik-Bold";
+  font-weight: normal;
+}
+
+/* bold-italic */
+strong > em, b > em,
+strong > i, b > i,
+em > strong, em > b,
+i > strong, i > b {
+  font-family: "Graphik-BoldItalic";
+  font-style: normal;
+}
+
+body, button, input, textarea {
+  font-family: "Graphik-Regular";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Graphik-Regular";
+}
+
+html {
+  font-family: "Graphik-Regular" !important;
+}
+
+/*# sourceMappingURL=fonts.css.map */

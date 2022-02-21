@@ -1,0 +1,79 @@
+/*
+ Theme Name:   Storefront Child
+ Theme URI:    http://nbntssg.tempurl.host
+ Description:  Storefront Child theme for SSG project
+ Author:       Max Cantor
+ Author URI:   http://nubbernaut.com
+ Template:     storefront
+ Version:      1.0.0
+*/
+
+/*Header*/
+@media (min-width: 1024px){
+    #masthead {
+        padding-top: 0px;
+    }
+
+
+    #masthead .col-full {
+        overflow: hidden;
+        background-color: lightgrey;
+        padding: 0;
+        max-width: 100%;
+        padding-top: 0px;
+        height: 46px;
+    }
+    .woocommerce-active .site-header .site-search{
+        width: auto;
+    }
+
+
+    .site-header .site-search .woocommerce-product-search .search-field {
+        background-color: transparent;
+        background-position: 5px center;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        border: none;
+        cursor: pointer;
+        height: 37px;
+        margin: 3px 0;
+        padding: 0 0 0 34px;
+        position: relative;
+        -webkit-transition: width 400ms ease, background 400ms ease;
+        transition:         width 400ms ease, background 400ms ease;
+        width: 0;
+    }
+
+    .site-header .site-search .woocommerce-product-search .search-field:focus {
+        background-color: #fff;
+        border: 2px solid #c3c0ab;
+        cursor: text;
+        outline: 0;
+        width: 230px;
+    }
+    .search-form
+    .search-submit {
+        display:none;
+    }
+    /* Footer */
+    .footer-content{
+        text-align: center;
+    }
+    .footer-content h4{
+        font-weight: 400;
+    }
+    .footer-content p{
+        margin: 0px;
+    }
+    .footer-content a{
+        text-decoration: none;
+    }
+    .social-media-buttons{
+        display: flex;
+        justify-content: center;
+    }
+    .social-media-icon{
+        height: 39px;
+        width: 39px;
+        margin: 10px 15px 0px 15px;
+    }
