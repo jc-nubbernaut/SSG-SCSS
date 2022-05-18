@@ -496,7 +496,7 @@ label.forminator-label {
 }
 .page-template-ssg_homepage-template .homepage-callout .home-info-box {
   position: absolute;
-  bottom: 0em;
+  bottom: 0;
   left: 2em;
   width: 24em;
   background-color: white;
@@ -515,6 +515,14 @@ label.forminator-label {
   /* Opera < 12.1 */
   animation: fadein 2s;
 }
+@media (max-width: 768px) {
+  .page-template-ssg_homepage-template .homepage-callout .home-info-box {
+    position: relative;
+    left: 0;
+    width: auto;
+    padding-left: 0;
+  }
+}
 .page-template-ssg_homepage-template .homepage-callout .home-info-box .header-box {
   font-weight: bolder;
 }
@@ -530,6 +538,11 @@ label.forminator-label {
   padding: 0.5em 3em;
   text-align: center;
   color: #ffffff;
+}
+@media (max-width: 768px) {
+  .page-template-ssg_homepage-template .homepage-callout .home-info-box a .headerbutton {
+    width: 100%;
+  }
 }
 .page-template-ssg_homepage-template .homepage-callout .home-info-box a .headerbutton:hover {
   background-color: #ff1a1a;
@@ -562,6 +575,11 @@ label.forminator-label {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2em;
 }
+@media (max-width: 768px) {
+  .page-template-ssg_homepage-template .acquisitions-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .page-template-ssg_homepage-template .acquisitions-gallery .artwork-block {
   display: flex;
   height: 14em;
@@ -588,22 +606,6 @@ label.forminator-label {
 }
 
 @media (max-width: 768px) {
-  .page-template-ssg_homepage-template .homepage-callout {
-    position: relative;
-  }
-  .page-template-ssg_homepage-template .homepage-callout .home-info-box {
-    position: relative;
-    left: 0;
-    width: auto;
-    padding-left: 0;
-  }
-  .page-template-ssg_homepage-template .homepage-callout .home-info-box .headerbutton {
-    width: 100%;
-  }
-  .page-template-ssg_homepage-template .acquisitions-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .site-branding {
     width: 100% !important;
   }
@@ -676,22 +678,23 @@ label.forminator-label {
   width: 55%;
   margin-right: 3%;
 }
-
-.single-product div.product .summary {
-  width: 42%;
-}
-
 @media (max-width: 768px) {
   .single-product div.product .woocommerce-product-gallery {
     width: 90%;
     margin: auto;
   }
+}
 
+.single-product div.product .summary {
+  width: 42%;
+}
+@media (max-width: 768px) {
   .single-product div.product .summary {
     width: 90%;
     margin: auto;
   }
 }
+
 /* Sales Archive */
 .page-template-sales-archive-template .col-full .secondary-navigation .menu-item:nth-child(4) a {
   color: #cf0000;
@@ -705,9 +708,30 @@ label.forminator-label {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2.14em;
 }
+@media (max-width: 1124px) {
+  .page-template-sales-archive-template .site-content .content-area .sales-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 876px) {
+  .page-template-sales-archive-template .site-content .content-area .sales-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 568px) {
+  .page-template-sales-archive-template .site-content .content-area .sales-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 .page-template-sales-archive-template .site-content .content-area .sales-gallery .sales-block {
   font-size: 12px;
   text-align: center;
+}
+@media (max-width: 568px) {
+  .page-template-sales-archive-template .site-content .content-area .sales-gallery .sales-block {
+    margin: auto;
+    text-align: center;
+  }
 }
 .page-template-sales-archive-template .site-content .content-area .sales-gallery .sales-block .sales-image {
   width: 230px;
@@ -726,34 +750,6 @@ label.forminator-label {
   font-size: 14px;
 }
 
-@media (max-width: 1124px) {
-  .page-template-sales-archive-template .site .content-area .sales-gallery {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .page-template-sales-archive-template .site .content-area .sales-gallery .artist-block {
-    text-align: center;
-  }
-}
-@media (max-width: 876px) {
-  .page-template-sales-archive-template .site .content-area .sales-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-  .page-template-sales-archive-template .site .content-area .sales-gallery .artist-block {
-    text-align: center;
-  }
-}
-@media (max-width: 568px) {
-  .page-template-sales-archive-template .site .content-area .sales-gallery {
-    grid-template-columns: 1fr;
-  }
-  .page-template-sales-archive-template .site .content-area .sales-gallery .artist-block {
-    margin: auto;
-  }
-
-  .sales-block {
-    margin: auto;
-  }
-}
 /* Artist List */
 .post-type-archive-artwork .site .col-full .secondary-navigation .menu .menu-item:first-child a {
   color: #cf0000;
@@ -768,6 +764,17 @@ label.forminator-label {
   font-size: 18px;
   column-count: 4;
 }
+@media (max-width: 1024px) {
+  .post-type-archive-artwork .site .content-area .artist-list {
+    column-count: 3;
+  }
+}
+@media (max-width: 800px) {
+  .post-type-archive-artwork .site .content-area .artist-list {
+    column-count: 2;
+    height: fit-content;
+  }
+}
 .post-type-archive-artwork .site .content-area .artist-list li {
   margin-bottom: 10px;
 }
@@ -779,10 +786,37 @@ label.forminator-label {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2.14em;
 }
+@media (max-width: 1080px) {
+  .post-type-archive-artwork .site .content-area .featured-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .post-type-archive-artwork .site .content-area .featured-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+}
+@media (max-width: 600px) {
+  .post-type-archive-artwork .site .content-area .featured-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 .post-type-archive-artwork .site .content-area .featured-gallery .artist-block {
   font-size: 14px;
   height: 200px;
   margin-top: 12px;
+}
+@media (max-width: 600px) {
+  .post-type-archive-artwork .site .content-area .featured-gallery .artist-block {
+    margin: auto;
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .post-type-archive-artwork .site .content-area .featured-gallery .artist-block {
+    text-align: center;
+  }
 }
 .post-type-archive-artwork .site .content-area .featured-gallery .artist-block .artist-image {
   width: 100%;
@@ -793,41 +827,18 @@ label.forminator-label {
 .post-type-archive-artwork .site .content-area .featured-gallery .artist-block .artist-image img {
   object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 
-@media (max-width: 1024px) {
-  .post-type-archive-artwork .site .content-area .artist-list {
-    height: 20em;
-  }
-  .post-type-archive-artwork .site .content-area .featured-gallery {
-    column-count: 3;
-  }
-  .post-type-archive-artwork .site .content-area .featured-gallery .artist-block {
-    text-align: center;
-  }
-}
-@media (max-width: 800px) {
-  .post-type-archive-artwork .site .content-area .artist-list {
-    column-count: 2;
-    height: fit-content;
-  }
-  .post-type-archive-artwork .site .content-area .featured-gallery {
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
-  }
-}
-@media (max-width: 600px) {
-  .post-type-archive-artwork .site .content-area .featured-gallery {
-    grid-template-columns: 1fr;
-  }
-  .post-type-archive-artwork .site .content-area .featured-gallery .artist-block {
-    margin: auto;
-    height: 100%;
-  }
-}
 /* Single Artist */
 .archive.tax-artist .site .secondary-navigation .menu .menu-item:first-child a {
   color: #cf0000;
+}
+@media (min-width: 768px) {
+  .archive.tax-artist .site .site-content .col-full .content-area {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
   display: grid;
@@ -835,11 +846,48 @@ label.forminator-label {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2.14em;
 }
+@media (max-width: 1080px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+  }
+}
+@media (max-width: 800px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
+    justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1080px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artist-block {
+    text-align: center;
+  }
+}
 .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block {
   height: 17em;
   margin-top: 1em;
   margin-bottom: 5em;
   text-align: center;
+}
+@media (max-width: 800px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block {
+    margin: auto auto 2em;
+  }
+}
+@media (max-width: 600px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block {
+    margin: auto;
+    height: 100%;
+  }
 }
 .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block .artwork-image {
   width: 100%;
@@ -860,10 +908,21 @@ label.forminator-label {
   padding: 1em 15%;
   font-size: 13px;
 }
+@media (max-width: 1080px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .artist-bio {
+    flex-wrap: wrap;
+    padding: 1em;
+  }
+}
 .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .bio-image {
   height: fit-content;
   margin: auto 2em;
   max-width: 300px;
+}
+@media (max-width: 1080px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .bio-image {
+    margin: 2em auto;
+  }
 }
 .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .description-state {
   display: none;
@@ -892,8 +951,18 @@ label.forminator-label {
   margin-left: 2em;
   margin-top: 1em;
 }
+@media (max-width: 1080px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .expand-bio-trigger {
+    margin-left: 3em;
+  }
+}
 .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .artist-description {
   padding-left: 2em;
+}
+@media (max-width: 1080px) {
+  .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .artist-description {
+    padding: 0 3em;
+  }
 }
 .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .artist-description p {
   margin: 0;
@@ -901,59 +970,13 @@ label.forminator-label {
 .archive.tax-artist .site .site-content .col-full .content-area .site-main h1.page-title {
   font-size: 26px;
 }
-
 @media (max-width: 768px) {
-  .single-artist-gallery {
-    justify-content: center;
-  }
-
-  .single-product div.product .summary {
+  .archive.tax-artist .single-product div.product .summary {
     width: 90%;
     margin: auto;
   }
 }
-@media (max-width: 1080px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em;
-  }
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artist-block {
-    text-align: center;
-  }
-  .archive.tax-artist .site .site-content .col-full .content-area .artist-bio {
-    flex-wrap: wrap;
-    padding: 1em;
-  }
-  .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .artist-description {
-    padding: 0 3em;
-  }
-  .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .expand-bio-trigger {
-    margin-left: 3em;
-  }
-  .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .bio-image {
-    margin: 2em auto;
-  }
-}
-@media (min-width: 768px) {
-  .tax-artist .content-area {
-    width: 100%;
-    margin-right: 0;
-  }
-}
-@media (max-width: 800px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
-    grid-template-columns: 1fr;
-  }
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artist-block {
-    margin: auto;
-    height: 100%;
-  }
-}
+
 /* Recent Acquisitions */
 .recent-acquisitions-page .col-full .secondary-navigation .menu-item:nth-child(2) a {
   color: #cf0000;
@@ -968,12 +991,33 @@ label.forminator-label {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2em;
 }
+@media (max-width: 1100px) {
+  .recent-acquisitions-page .artwork-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .recent-acquisitions-page .artwork-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .recent-acquisitions-page .artwork-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 .recent-acquisitions-page .artwork-gallery .artwork-block {
   display: flex;
   height: 14em;
   margin-bottom: 5em;
   text-align: center;
   font-size: 14px;
+}
+@media (max-width: 600px) {
+  .recent-acquisitions-page .artwork-gallery .artwork-block {
+    margin: auto auto 0.5em;
+    height: 100%;
+  }
 }
 .recent-acquisitions-page .artwork-gallery .artwork-block a {
   display: flex;
@@ -989,25 +1033,15 @@ label.forminator-label {
   height: 100%;
   object-fit: contain;
 }
+@media (max-width: 600px) {
+  .recent-acquisitions-page .artwork-gallery .artwork-block .artwork-image img {
+    height: initial;
+  }
+}
 .recent-acquisitions-page .artwork-gallery .artwork-block p {
   margin: 0;
 }
 
-@media (max-width: 800px) {
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery {
-    grid-template-columns: 1fr;
-  }
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery .artwork-block {
-    margin: auto;
-    height: 100%;
-    padding-bottom: 1em;
-  }
-}
 /* Contact page */
 .google-map-widget {
   width: 100%;
@@ -1082,8 +1116,23 @@ label.forminator-label {
 }
 .post-type-archive-publication .publications-gallery {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 5em;
+}
+@media (max-width: 1340px) {
+  .post-type-archive-publication .publications-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 925px) {
+  .post-type-archive-publication .publications-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .post-type-archive-publication .publications-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 .post-type-archive-publication .publications-gallery .publication-block {
   margin: auto auto 0;
@@ -1151,6 +1200,16 @@ label.forminator-label {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2.14em;
 }
+@media (max-width: 800px) {
+  .single-artfair .artist-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .single-artfair .artist-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 .single-artfair .artist-gallery .artist-block {
   font-size: 14px;
   height: 17em;
@@ -1163,7 +1222,6 @@ label.forminator-label {
   margin-bottom: 0.5em;
 }
 .single-artfair .artist-gallery .artist-block .artist-image img {
-  object-fit: contain;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1185,8 +1243,24 @@ label.forminator-label {
 }
 .post-type-archive-artfair .art-fair-gallery {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 3em;
+}
+@media (max-width: 1340px) {
+  .post-type-archive-artfair .art-fair-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 925px) {
+  .post-type-archive-artfair .art-fair-gallery {
+    grid-template-columns: 1fr;
+    margin-bottom: 5em;
+  }
+}
+@media (max-width: 1340px) {
+  .post-type-archive-artfair .art-fair-gallery .art-fair-block {
+    text-align: center;
+  }
 }
 .post-type-archive-artfair .art-fair-gallery .art-fair-block p.art-fairs-titles {
   font-size: 18px;
@@ -1214,12 +1288,6 @@ label.forminator-label {
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .post-type-archive-artfair .art-fair-gallery {
-    grid-template-columns: auto auto;
-    margin-bottom: 5em;
-  }
-}
 /* Search */
 .search .content-area {
   width: 100%;
@@ -1231,12 +1299,29 @@ label.forminator-label {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2em;
 }
+@media (max-width: 800px) {
+  .search .artwork-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .search .artwork-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 .search .artwork-gallery .artwork-block {
   display: flex;
   height: 14em;
   text-align: center;
   font-size: 14px;
   margin: auto auto 5em;
+}
+@media (max-width: 600px) {
+  .search .artwork-gallery .artwork-block {
+    margin: auto;
+    height: 100%;
+    padding-bottom: 1em;
+  }
 }
 .search .artwork-gallery .artwork-block .artwork-image {
   width: 100%;
@@ -1253,21 +1338,6 @@ label.forminator-label {
   margin: 0;
 }
 
-@media (max-width: 800px) {
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery {
-    grid-template-columns: 1fr;
-  }
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery .artwork-block {
-    margin: auto;
-    height: 100%;
-    padding-bottom: 1em;
-  }
-}
 /* 404 page */
 .error404 .artwork-gallery {
   padding-top: 2em;
@@ -1275,12 +1345,29 @@ label.forminator-label {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2em;
 }
+@media (max-width: 800px) {
+  .error404 .artwork-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .error404 .artwork-gallery {
+    grid-template-columns: 1fr;
+  }
+}
 .error404 .artwork-gallery .artwork-block {
   display: flex;
   height: 14em;
   margin-bottom: 5em;
   text-align: center;
   font-size: 14px;
+}
+@media (max-width: 600px) {
+  .error404 .artwork-gallery .artwork-block {
+    margin: auto;
+    height: 100%;
+    padding-bottom: 1em;
+  }
 }
 .error404 .artwork-gallery .artwork-block .artwork-image {
   width: 100%;
@@ -1294,22 +1381,6 @@ label.forminator-label {
 }
 .error404 .artwork-gallery .artwork-block p {
   margin: 0;
-}
-
-@media (max-width: 800px) {
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery {
-    grid-template-columns: 1fr;
-  }
-  .recent-acquisitions-page .site .site-content .col-full .content-area .artwork-gallery .artwork-block {
-    margin: auto;
-    height: 100%;
-    padding-bottom: 1em;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
