@@ -29,10 +29,6 @@
   }
 }
 
-a:focus,
-.focus a {
-  outline: none !important;
-}
 img{
   border-radius: 0 !important;
 }
@@ -332,7 +328,7 @@ label.forminator-label{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 2.14em;
         & .sales-block {
-          font-size: 11px;
+          font-size: 12px;
           text-align: center;
           & .sales-image{
             width: 230px;

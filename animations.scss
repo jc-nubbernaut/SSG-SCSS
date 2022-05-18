@@ -66,9 +66,16 @@
   from { opacity: 1; }
   to   { opacity: 0; }
 }
+a:hover{
+  color: #cf0000;
+}
 a{
   transition: .35s;
 }
+a:focus{
+  outline: none;
+}
+
 /* Prevents autofill from changing input colour */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

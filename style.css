@@ -397,8 +397,16 @@ html {
     opacity: 0;
   }
 }
+a:hover {
+  color: #cf0000;
+}
+
 a {
   transition: 0.35s;
+}
+
+a:focus {
+  outline: none;
 }
 
 /* Prevents autofill from changing input colour */
@@ -417,11 +425,6 @@ input:-webkit-autofill:active {
 .woocommerce .product .images .flex-control-thumbs li {
   margin-right: 0;
   padding-bottom: 2em;
-}
-
-a:focus,
-.focus a {
-  outline: none !important;
 }
 
 img {
@@ -703,7 +706,7 @@ label.forminator-label {
   gap: 2.14em;
 }
 .page-template-sales-archive-template .site-content .content-area .sales-gallery .sales-block {
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
 }
 .page-template-sales-archive-template .site-content .content-area .sales-gallery .sales-block .sales-image {
