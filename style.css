@@ -8,17 +8,9 @@
  Version:      1.0.0
 */
 /* Header */
-nav.woocommerce-breadcrumb {
-  display: none;
-}
-
-.storefront-breadcrumb {
-  display: none;
-}
-
 @media (min-width: 768px) {
   #masthead {
-    padding: 50px 0;
+    padding: 25px 0;
     border: 0;
     margin-bottom: 0;
   }
@@ -211,7 +203,7 @@ html {
 .site-footer .footer-content {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.5px;
 }
 .site-footer .footer-content .forminator-row {
@@ -418,13 +410,53 @@ input:-webkit-autofill:active {
 }
 
 /* Woocommerce/storefront overrides */
-.woocommerce .product .images .flex-control-thumbs {
+.theme-storefront .woocommerce-breadcrumb {
+  font-size: 16px;
+  border-top: solid 1px grey;
+  padding: 0.5em 0;
+  margin-bottom: 1em;
+}
+.theme-storefront .woocommerce-breadcrumb .breadcrumb-separator::after {
+  opacity: 1;
+}
+.theme-storefront .woocommerce-breadcrumb a {
+  color: #cf0000;
+  text-decoration: none;
+}
+.theme-storefront .woocommerce-breadcrumb a:first-of-type::before {
+  display: none;
+}
+.theme-storefront .woocommerce-breadcrumb a:hover {
+  color: #000000;
+}
+.theme-storefront .storefront-breadcrumb {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+.theme-storefront .storefront-breadcrumb a {
+  color: #cf0000;
+  text-decoration: none;
+}
+.theme-storefront .storefront-breadcrumb a:first-of-type::before {
+  display: none;
+}
+.theme-storefront .storefront-breadcrumb a:hover {
+  color: #000000;
+}
+.theme-storefront .product .images .flex-control-thumbs {
   display: flex;
   flex-wrap: wrap;
 }
-.woocommerce .product .images .flex-control-thumbs li {
+.theme-storefront .product .images .flex-control-thumbs li {
   margin-right: 0;
   padding-bottom: 2em;
+}
+
+.section-break-border-bot {
+  border-bottom: solid 1px grey;
+  margin: 0;
+  padding: 0.5em 0;
 }
 
 img {
@@ -434,7 +466,7 @@ img {
 @media (min-width: 768px) {
   #masthead .col-full .secondary-navigation ul.menu a {
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.5px;
     line-height: normal;
   }
@@ -469,6 +501,7 @@ img {
   display: none;
 }
 
+/* Forminator customizations */
 button.forminator-button.forminator-button-submit.contact-submit-button {
   border-radius: 0 !important;
   font-size: 16px !important;
@@ -481,6 +514,30 @@ label.forminator-label {
   font-size: 16px !important;
   font-weight: normal !important;
   letter-spacing: 0.5px;
+}
+
+.single-artfair .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button, .single-artwork .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button, .single-publication .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button {
+  width: 100%;
+}
+.single-artfair .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button:hover, .single-artwork .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button:hover, .single-publication .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button:hover {
+  box-shadow: none;
+}
+.single-artfair .artfair-inquire, .single-artwork .artfair-inquire, .single-publication .artfair-inquire {
+  margin-top: 1em;
+  width: 100%;
+}
+.single-artfair .artfair-inquire .inquire-button, .single-artwork .artfair-inquire .inquire-button, .single-publication .artfair-inquire .inquire-button {
+  width: 100%;
+  background-color: #cf0000;
+  padding: 1em 1em;
+  display: block;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.single-artfair .artfair-inquire .inquire-button:hover, .single-artwork .artfair-inquire .inquire-button:hover, .single-publication .artfair-inquire .inquire-button:hover {
+  background-color: #ff1a1a;
 }
 
 /* Homepage */
@@ -562,7 +619,7 @@ label.forminator-label {
 }
 .page-template-ssg_homepage-template .recent-header .view-all {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   align-self: flex-end;
 }
 .page-template-ssg_homepage-template .cover-container .full-cover img {
@@ -585,7 +642,7 @@ label.forminator-label {
   height: 14em;
   margin-bottom: 5em;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 .page-template-ssg_homepage-template .acquisitions-gallery .artwork-block a {
   display: flex;
@@ -649,12 +706,6 @@ label.forminator-label {
 }
 .single-artwork .site-content .content-area .artwork-content p:last-of-type {
   margin-top: 16px;
-}
-.single-artwork .site-content .content-area .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button {
-  width: 100%;
-}
-.single-artwork .site-content .content-area .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button:hover {
-  box-shadow: none;
 }
 .single-artwork .site-content .content-area .artwork-inquire {
   margin-top: 1em;
@@ -724,7 +775,7 @@ label.forminator-label {
   }
 }
 .page-template-sales-archive-template .site-content .content-area .sales-gallery .sales-block {
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
 }
 @media (max-width: 568px) {
@@ -747,7 +798,7 @@ label.forminator-label {
   margin: auto;
 }
 .page-template-sales-archive-template .site-content .content-area .sales-gallery .sales-block .sales-title {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* Artist List */
@@ -803,9 +854,9 @@ label.forminator-label {
   }
 }
 .post-type-archive-artwork .site .content-area .featured-gallery .artist-block {
-  font-size: 14px;
-  height: 200px;
-  margin-top: 12px;
+  font-size: 16px;
+  height: 17em;
+  margin-top: 1em;
 }
 @media (max-width: 600px) {
   .post-type-archive-artwork .site .content-area .featured-gallery .artist-block {
@@ -822,12 +873,24 @@ label.forminator-label {
   width: 100%;
   height: 100%;
   display: flex;
-  margin-bottom: 6px;
+  margin-bottom: 0.5em;
+}
+@media (max-width: 600px) {
+  .post-type-archive-artwork .site .content-area .featured-gallery .artist-block .artist-image {
+    height: unset;
+  }
 }
 .post-type-archive-artwork .site .content-area .featured-gallery .artist-block .artist-image img {
   object-fit: cover;
-  width: 100%;
   height: 100%;
+  width: 100%;
+  max-height: 100%;
+}
+@media (max-width: 600px) {
+  .post-type-archive-artwork .site .content-area .featured-gallery .artist-block .artist-image img {
+    max-width: 300px;
+    max-height: 200px;
+  }
 }
 
 /* Single Artist */
@@ -840,73 +903,12 @@ label.forminator-label {
     margin-right: 0;
   }
 }
-.archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
-  display: grid;
-  flex-wrap: wrap;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 2.14em;
-}
-@media (max-width: 1080px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em;
-  }
-}
-@media (max-width: 800px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 768px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
-    justify-content: center;
-  }
-}
-@media (max-width: 600px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 1080px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artist-block {
-    text-align: center;
-  }
-}
-.archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block {
-  height: 17em;
-  margin-top: 1em;
-  margin-bottom: 5em;
-  text-align: center;
-}
-@media (max-width: 800px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block {
-    margin: auto auto 2em;
-  }
-}
-@media (max-width: 600px) {
-  .archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block {
-    margin: auto;
-    height: 100%;
-  }
-}
-.archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block .artwork-image {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  margin: auto auto 0.5em;
-}
-.archive.tax-artist .site .site-content .col-full .content-area .single-artist-gallery .artwork-block .artwork-image img {
-  object-fit: contain;
-  max-height: 100%;
-  margin: auto;
-}
 .archive.tax-artist .site .site-content .col-full .content-area .artist-bio {
   display: flex;
   width: 100%;
   margin: 4em auto;
   padding: 1em 15%;
-  font-size: 13px;
+  font-size: 16px;
 }
 @media (max-width: 1080px) {
   .archive.tax-artist .site .site-content .col-full .content-area .artist-bio {
@@ -947,7 +949,7 @@ label.forminator-label {
 .archive.tax-artist .site .site-content .col-full .content-area .artist-bio .expand-bio-trigger {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 16px;
   margin-left: 2em;
   margin-top: 1em;
 }
@@ -1011,7 +1013,7 @@ label.forminator-label {
   height: 14em;
   margin-bottom: 5em;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 @media (max-width: 600px) {
   .recent-acquisitions-page .artwork-gallery .artwork-block {
@@ -1040,6 +1042,76 @@ label.forminator-label {
 }
 .recent-acquisitions-page .artwork-gallery .artwork-block p {
   margin: 0;
+}
+
+.single-artist-gallery {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2.14em;
+}
+@media (max-width: 1080px) {
+  .single-artist-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+  }
+}
+@media (max-width: 800px) {
+  .single-artist-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .single-artist-gallery {
+    justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  .single-artist-gallery {
+    grid-template-columns: 1fr;
+    gap: 4em;
+  }
+}
+@media (max-width: 1080px) {
+  .single-artist-gallery .artist-block {
+    text-align: center;
+  }
+}
+.single-artist-gallery .artwork-block {
+  height: 17em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .single-artist-gallery .artwork-block {
+    margin: auto auto 2em;
+  }
+}
+@media (max-width: 600px) {
+  .single-artist-gallery .artwork-block {
+    margin: 2em auto auto;
+    height: 100%;
+  }
+}
+.single-artist-gallery .artwork-block .artwork-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+.single-artist-gallery .artwork-block .artwork-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 100%;
+  margin: auto;
+}
+@media (max-width: 600px) {
+  .single-artist-gallery .artwork-block .artwork-image img {
+    width: 300px;
+  }
 }
 
 /* Contact page */
@@ -1100,10 +1172,14 @@ label.forminator-label {
 .single-publication .col-full .wp-block-column .publication-image {
   margin: auto;
 }
-.single-publication .art-fair {
+.single-publication .publication {
   margin-bottom: 35px;
   font-weight: normal;
   color: #364541;
+}
+.single-publication .artists-tax-gallery {
+  margin-top: 2em;
+  margin-bottom: 4em;
 }
 
 /* Publication Gallery */
@@ -1171,57 +1247,41 @@ label.forminator-label {
 .single-artfair .site-content .artfair-title {
   margin-bottom: 5px;
 }
-.single-artfair .site-content .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button {
-  width: 100%;
-}
-.single-artfair .site-content .forminator-col .forminator-field button.forminator-button.forminator-button-submit.contact-submit-button:hover {
-  box-shadow: none;
-}
-.single-artfair .site-content .artfair-inquire {
-  margin-top: 1em;
-  width: 100%;
-}
-.single-artfair .site-content .artfair-inquire .inquire-button {
-  width: 100%;
-  background-color: #cf0000;
-  padding: 1em 1em;
-  display: block;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  margin-top: 25px;
-}
-.single-artfair .site-content .artfair-inquire .inquire-button:hover {
-  background-color: #ff1a1a;
-}
-.single-artfair .artist-gallery {
+
+/* Artist tax gallery used in publications and artfairs */
+.artist-gallery {
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2.14em;
 }
+@media (max-width: 1100px) {
+  .artist-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 @media (max-width: 800px) {
-  .single-artfair .artist-gallery {
+  .artist-gallery {
     grid-template-columns: 1fr 1fr;
   }
 }
 @media (max-width: 600px) {
-  .single-artfair .artist-gallery {
+  .artist-gallery {
     grid-template-columns: 1fr;
   }
 }
-.single-artfair .artist-gallery .artist-block {
-  font-size: 14px;
+.artist-gallery .artist-block {
+  font-size: 16px;
   height: 17em;
   margin-top: 1em;
 }
-.single-artfair .artist-gallery .artist-block .artist-image {
+.artist-gallery .artist-block .artist-image {
   width: 100%;
   height: 100%;
   display: flex;
   margin-bottom: 0.5em;
 }
-.single-artfair .artist-gallery .artist-block .artist-image img {
+.artist-gallery .artist-block .artist-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1266,7 +1326,7 @@ label.forminator-label {
   font-size: 18px;
 }
 .post-type-archive-artfair .art-fair-gallery .art-fair-block p {
-  font-size: 14px;
+  font-size: 16px;
 }
 .post-type-archive-artfair .art-fair-gallery .art-fair-block .artfair-image {
   width: 400px;
@@ -1313,7 +1373,7 @@ label.forminator-label {
   display: flex;
   height: 14em;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   margin: auto auto 5em;
 }
 @media (max-width: 600px) {
@@ -1360,7 +1420,7 @@ label.forminator-label {
   height: 14em;
   margin-bottom: 5em;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 @media (max-width: 600px) {
   .error404 .artwork-gallery .artwork-block {
